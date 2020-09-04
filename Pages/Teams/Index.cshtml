@@ -28,7 +28,7 @@
 
         @foreach(Team Team in Model.GetDivisionTeams(Division.DivisionId))
         {
-            <a class="@(Team.TeamId == Model.FavoriteTeam ? "d-flex favorite p1" : "d-flex p1")">
+            <a class="@(Team.TeamId == Model.FavoriteTeam ? "d-flex favorite p1" : "d-flex p1")" asp-page="./Team" asp-route-id="@Team.TeamId">
                 <div style="flex:0 0 25%">@Team.Location</div>
                 <div style="flex:0 0 25%">@Team.Name</div>
                 <div style="flex:0 0 5%">@Team.Win</div>

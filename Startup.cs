@@ -35,7 +35,7 @@ namespace League
       options.Cookie.IsEssential = true;
       });
 
-      services.AddRazorPages();
+      services.AddRazorPages().AddRazorRuntimeCompilation();
 
       // configure the Entity Framework context passing the connection string
       services.AddDbContext<LeagueContext>(options => options.UseSqlite(Configuration.GetConnectionString("LeagueContext")));

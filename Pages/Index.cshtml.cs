@@ -5,21 +5,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using League.Models;
+using League.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace League.Pages
 {
   public class IndexModel : PageModel
   {
-    private readonly ILogger<IndexModel> _logger;
+        private readonly LeagueContext _context;
 
-    public IndexModel(ILogger<IndexModel> logger)
-    {
-      _logger = logger;
+        public IndexModel(LeagueContext context)
+        {
+            _context = context;
+        }
+
+        public League.Models.League League { get; set; }
+
+        public async Task OnGetAsync()
+        {
+            League = await _context.Leagues.FirstOrDefaultAsync();
+        }
     }
-
-    public void OnGet()
-    {
-
-    }
-  }
 }

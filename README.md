@@ -1,7 +1,7 @@
 
 ### Leauge
 
-Presenting existing  of the NFL Leauge using ASP.NET + Entity Framework
+Presenting existing data of the NFL Leauge using ASP.NET + Entity Framework
 
 ##### Team
 * Displays a list of teams which belong to a conference
